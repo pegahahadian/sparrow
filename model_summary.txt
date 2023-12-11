@@ -1,0 +1,122 @@
+Model: "model_3"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_8 (InputLayer)           [(None, 23, 3)]      0           []                               
+                                                                                                  
+ reshape_13 (Reshape)           (None, 23, 3, 1)     0           ['input_8[0][0]']                
+                                                                                                  
+ conv2d_7 (Conv2D)              (None, 21, 1, 128)   1280        ['reshape_13[0][0]']             
+                                                                                                  
+ reshape_14 (Reshape)           (None, 336, 8)       0           ['conv2d_7[0][0]']               
+                                                                                                  
+ lambda_5 (Lambda)              (None, 336, 8)       0           ['reshape_14[0][0]']             
+                                                                                                  
+ tf.compat.v1.shape_3 (TFOpLamb  (3,)                0           ['lambda_5[0][0]']               
+ da)                                                                                              
+                                                                                                  
+ tf.__operators__.getitem_3 (Sl  ()                  0           ['tf.compat.v1.shape_3[0][0]']   
+ icingOpLambda)                                                                                   
+                                                                                                  
+ tf.zeros_3 (TFOpLambda)        (31, 336)            0           ['tf.__operators__.getitem_3[0][0
+                                                                 ]']                              
+                                                                                                  
+ tf.expand_dims_3 (TFOpLambda)  (None, 1, 336, 8)    0           ['lambda_5[0][0]']               
+                                                                                                  
+ tf.nn.softmax_9 (TFOpLambda)   (31, 336)            0           ['tf.zeros_3[0][0]']             
+                                                                                                  
+ tf.tile_3 (TFOpLambda)         (None, 31, 336, 8)   0           ['tf.expand_dims_3[0][0]']       
+                                                                                                  
+ tf.linalg.matmul_15 (TFOpLambd  (None, 31, 31, 8)   0           ['tf.nn.softmax_9[0][0]',        
+ a)                                                               'tf.tile_3[0][0]']              
+                                                                                                  
+ tf.math.square_9 (TFOpLambda)  (None, 31, 31, 8)    0           ['tf.linalg.matmul_15[0][0]']    
+                                                                                                  
+ tf.math.reduce_sum_9 (TFOpLamb  (None, 31, 31, 1)   0           ['tf.math.square_9[0][0]']       
+ da)                                                                                              
+                                                                                                  
+ tf.__operators__.add_24 (TFOpL  (None, 31, 31, 1)   0           ['tf.math.reduce_sum_9[0][0]']   
+ ambda)                                                                                           
+                                                                                                  
+ tf.math.sqrt_9 (TFOpLambda)    (None, 31, 31, 1)    0           ['tf.__operators__.add_24[0][0]']
+                                                                                                  
+ tf.__operators__.add_25 (TFOpL  (None, 31, 31, 1)   0           ['tf.__operators__.add_24[0][0]']
+ ambda)                                                                                           
+                                                                                                  
+ tf.math.truediv_9 (TFOpLambda)  (None, 31, 31, 1)   0           ['tf.math.sqrt_9[0][0]',         
+                                                                  'tf.__operators__.add_25[0][0]']
+                                                                                                  
+ tf.math.multiply_9 (TFOpLambda  (None, 31, 31, 8)   0           ['tf.math.truediv_9[0][0]',      
+ )                                                                'tf.linalg.matmul_15[0][0]']    
+                                                                                                  
+ tf.linalg.matmul_16 (TFOpLambd  (None, 31, 31, 336)  0          ['tf.math.multiply_9[0][0]',     
+ a)                                                               'tf.tile_3[0][0]']              
+                                                                                                  
+ tf.__operators__.add_26 (TFOpL  (None, 31, 31, 336)  0          ['tf.zeros_3[0][0]',             
+ ambda)                                                           'tf.linalg.matmul_16[0][0]']    
+                                                                                                  
+ tf.nn.softmax_10 (TFOpLambda)  (None, 31, 31, 336)  0           ['tf.__operators__.add_26[0][0]']
+                                                                                                  
+ tf.linalg.matmul_17 (TFOpLambd  (None, 31, 31, 8)   0           ['tf.nn.softmax_10[0][0]',       
+ a)                                                               'tf.tile_3[0][0]']              
+                                                                                                  
+ tf.math.square_10 (TFOpLambda)  (None, 31, 31, 8)   0           ['tf.linalg.matmul_17[0][0]']    
+                                                                                                  
+ tf.math.reduce_sum_10 (TFOpLam  (None, 31, 31, 1)   0           ['tf.math.square_10[0][0]']      
+ bda)                                                                                             
+                                                                                                  
+ tf.__operators__.add_27 (TFOpL  (None, 31, 31, 1)   0           ['tf.math.reduce_sum_10[0][0]']  
+ ambda)                                                                                           
+                                                                                                  
+ tf.math.sqrt_10 (TFOpLambda)   (None, 31, 31, 1)    0           ['tf.__operators__.add_27[0][0]']
+                                                                                                  
+ tf.__operators__.add_28 (TFOpL  (None, 31, 31, 1)   0           ['tf.__operators__.add_27[0][0]']
+ ambda)                                                                                           
+                                                                                                  
+ tf.math.truediv_10 (TFOpLambda  (None, 31, 31, 1)   0           ['tf.math.sqrt_10[0][0]',        
+ )                                                                'tf.__operators__.add_28[0][0]']
+                                                                                                  
+ tf.math.multiply_10 (TFOpLambd  (None, 31, 31, 8)   0           ['tf.math.truediv_10[0][0]',     
+ a)                                                               'tf.linalg.matmul_17[0][0]']    
+                                                                                                  
+ tf.linalg.matmul_18 (TFOpLambd  (None, 31, 31, 336)  0          ['tf.math.multiply_10[0][0]',    
+ a)                                                               'tf.tile_3[0][0]']              
+                                                                                                  
+ tf.__operators__.add_29 (TFOpL  (None, 31, 31, 336)  0          ['tf.__operators__.add_26[0][0]',
+ ambda)                                                           'tf.linalg.matmul_18[0][0]']    
+                                                                                                  
+ tf.nn.softmax_11 (TFOpLambda)  (None, 31, 31, 336)  0           ['tf.__operators__.add_29[0][0]']
+                                                                                                  
+ tf.linalg.matmul_19 (TFOpLambd  (None, 31, 31, 8)   0           ['tf.nn.softmax_11[0][0]',       
+ a)                                                               'tf.tile_3[0][0]']              
+                                                                                                  
+ tf.math.square_11 (TFOpLambda)  (None, 31, 31, 8)   0           ['tf.linalg.matmul_19[0][0]']    
+                                                                                                  
+ tf.math.reduce_sum_11 (TFOpLam  (None, 31, 31, 1)   0           ['tf.math.square_11[0][0]']      
+ bda)                                                                                             
+                                                                                                  
+ tf.__operators__.add_30 (TFOpL  (None, 31, 31, 1)   0           ['tf.math.reduce_sum_11[0][0]']  
+ ambda)                                                                                           
+                                                                                                  
+ tf.math.sqrt_11 (TFOpLambda)   (None, 31, 31, 1)    0           ['tf.__operators__.add_30[0][0]']
+                                                                                                  
+ tf.__operators__.add_31 (TFOpL  (None, 31, 31, 1)   0           ['tf.__operators__.add_30[0][0]']
+ ambda)                                                                                           
+                                                                                                  
+ tf.math.truediv_11 (TFOpLambda  (None, 31, 31, 1)   0           ['tf.math.sqrt_11[0][0]',        
+ )                                                                'tf.__operators__.add_31[0][0]']
+                                                                                                  
+ tf.math.multiply_11 (TFOpLambd  (None, 31, 31, 8)   0           ['tf.math.truediv_11[0][0]',     
+ a)                                                               'tf.linalg.matmul_19[0][0]']    
+                                                                                                  
+ flatten_3 (Flatten)            (None, 7688)         0           ['tf.math.multiply_11[0][0]']    
+                                                                                                  
+ dense_4 (Dense)                (None, 124)          953436      ['flatten_3[0][0]']              
+                                                                                                  
+ reshape_15 (Reshape)           (None, 31, 4)        0           ['dense_4[0][0]']                
+                                                                                                  
+==================================================================================================
+Total params: 954,716
+Trainable params: 954,716
+Non-trainable params: 0
+__________________________________________________________________________________________________
