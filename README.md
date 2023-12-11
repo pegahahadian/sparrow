@@ -28,5 +28,3 @@ Conversion of the model to CoreML format was attempted for deployment on Apple d
 The project presented challenges in model conversion, offering insights into the complexities of working with advanced neural network architectures and different machine learning frameworks. It highlighted the importance of considering deployment constraints early in the model design process.
 
 ---
-
-This report provides a comprehensive overview of your project, its objectives, key findings, challenges, and potential areas for future work. Make sure to adjust any specific details to accurately reflect your project's implementation and results.
