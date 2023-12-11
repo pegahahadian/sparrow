@@ -24,7 +24,4 @@ The model's computational complexity, measured in FLOPs, is approximately 0.032 
 ## CoreML Conversion
 Conversion of the model to CoreML format was attempted for deployment on Apple devices. However, compatibility issues arose during the conversion process, particularly involving the conversion from TensorFlow to ONNX format.
 
-## Challenges and Learnings
-The project presented challenges in model conversion, offering insights into the complexities of working with advanced neural network architectures and different machine learning frameworks. It highlighted the importance of considering deployment constraints early in the model design process.
-
 ---
