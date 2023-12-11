@@ -1,6 +1,6 @@
 # sparrow
 
-# Human Joint Movement Prediction Using Capsule Networks
+# Human Joint Movement Prediction By Capsule Networks
 
 ## Project Overview
 This project focuses on developing a neural network model that predicts the orientations of human joints, represented by local unit quaternions, based on 2D coordinates and confidence values of the joints. A Capsule Network architecture was employed to effectively capture spatial hierarchies and relationships within the data.
@@ -22,14 +22,10 @@ The model was compiled with the Adam optimizer (learning rate: 0.001) and mean s
 The model's computational complexity, measured in FLOPs, is approximately 0.032 GigaFLOPs. This relatively low computational demand makes the model suitable for deployment in resource-constrained environments.
 
 ## CoreML Conversion
-Conversion of the model to CoreML format was attempted for deployment on Apple devices. However, compatibility issues arose during the conversion process, particularly involving the conversion from TensorFlow to ONNX format. These challenges were documented, and alternative deployment strategies were considered.
+Conversion of the model to CoreML format was attempted for deployment on Apple devices. However, compatibility issues arose during the conversion process, particularly involving the conversion from TensorFlow to ONNX format.
 
 ## Challenges and Learnings
 The project presented challenges in model conversion, offering insights into the complexities of working with advanced neural network architectures and different machine learning frameworks. It highlighted the importance of considering deployment constraints early in the model design process.
-
-
-## Conclusion
-The project successfully demonstrates the application of Capsule Networks in predicting human joint movements. While challenges in model conversion were encountered, the project provides a strong foundation for further development and research in this area.
 
 ---
 
